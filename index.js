@@ -8,7 +8,7 @@ const dotenv = require('dotenv').config();
 const authorRoute = require("./routes/author");
 const bookRoute = require("./routes/book");
 //(process.env.MONGODB_URL)
-mongoose.connect("mongodb+srv://bangdanh105:Bang1052001@cluster0.y0pizui.mongodb.net/?retryWrites=true&w=majority", () =>{
+mongoose.connect((process.env.MONGODB_URL), () =>{
     console.log('done Connection database<<<<<<<<<<');
 })
 app.use(bodyParser.json({limit: "50mb"}));
